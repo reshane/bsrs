@@ -1,0 +1,31 @@
+#compdef _bsrs_completion bsrs
+
+function _bsrs_completion {
+    local line
+
+    _arguments -C \
+        "-h[Show help information]" \
+        "--h[Show help information]" \
+        "1: :(shane othershane)" \
+        "*::arg:->args"
+
+    case $line[1] in
+        shane)
+            _shane
+        ;;
+        othershane)
+            _othershane
+        ;;
+    esac
+}
+
+function _shane {
+    _arguments \
+        "shane[says shane]"
+}
+
+function _othershane {
+    _arguments \
+        "othershane[says othershane]"
+}
+
